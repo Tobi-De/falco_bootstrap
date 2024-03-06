@@ -85,10 +85,10 @@ THIRD_PARTY_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "crispy_forms",
-    "crispy_tailwind",
+    "crispy_bootstrap5",
     "django_htmx",
     "template_partials",
-    "django_tailwind_cli",
+    "django_bootstrap5",
     "django_q",
     "django_q_registry",
     "health_check",
@@ -333,9 +333,9 @@ if not DEBUG:
     }
 
 # django-crispy-forms
-CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
-CRISPY_TEMPLATE_PACK = "tailwind"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 # django-debug-toolbar
 DEBUG_TOOLBAR_CONFIG = {

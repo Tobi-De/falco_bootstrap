@@ -1,17 +1,19 @@
 {% raw %}
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
+
 
 {% block content %}
 {% endraw %}
-    <section>
-        <h1>Create {{ model_name }}</h1>
-        <a href="{{list_view_url|safe}}">All {{model_verbose_name_plural|capitalize}}</a>
+    <section class="d-flex justify-content-between">
+        <h1 class="text-lg text-bold py-4">Create {{ model_name }}</h1>
+        <a href="{{list_view_url|safe}}" role="button" class="btn btn-primary align-self-center">All {{model_verbose_name_plural|capitalize}}</a>
     </section>
     {% raw %}
     <form method="post">
         {% csrf_token %}
-        {{form}}
-        <button type="submit" >
+        {{form | crispy}}
+        <button type="submit" class="cursor-pointer py-2 px-4 btn btn-secondary rounded-lg">
             Save
         </button>
     </form>

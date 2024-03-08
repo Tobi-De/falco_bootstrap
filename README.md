@@ -12,4 +12,4 @@ falco start-project my_awesome_project -b bootstrap
 ## What's changed
 
 - [x] Use [Bootstrap 5](https://getbootstrap.com/) instead of tailwindcss.
-- [ ] Ready-to-go CRUD Bootstrap blueprint for the [crud](https://falco.oluwatobi.dev/the_cli/crud.html) command.
+- [x] Ready-to-go CRUD Bootstrap blueprint for the [crud](https://falco.oluwatobi.dev/the_cli/crud.html) command.

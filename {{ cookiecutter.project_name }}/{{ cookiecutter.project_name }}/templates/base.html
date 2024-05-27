@@ -10,14 +10,9 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-<<<<<<< HEAD
-    {% endraw %}<title>{{ cookiecutter.project_name }}</title>{% raw %}
+    {% block title %}{% endraw %}<title>{{ cookiecutter.project_name | title }}</title>{% raw %}{% endblock title %}
     {% bootstrap_css %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-=======
-    {% block title %}{% endraw %}<title>{{ cookiecutter.project_name | title }}</title>{% raw %}{% endblock title %}
-    {% tailwind_css %}
->>>>>>> upstream/main
     {% block css %}
     {% endblock css %}
     {% bootstrap_javascript %}
@@ -26,7 +21,6 @@
     {% endblock javascript %}
   </head>
   <body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
-<<<<<<< HEAD
 
     {% block header %}
         <header class="px-3 py-2 text-bg-light border-bottom fixed-top">
@@ -109,9 +103,8 @@
                 </nav>
             </div>
         </header>
-    {% endblock header %}
 
-    <main class="container mx-auto"> 
+    <main class="container mx-auto">
       <div class="bs-messages">{% bootstrap_messages %}</div>
       {% block content %}
       {% endblock content %}
@@ -125,12 +118,6 @@
       </div>
     {% endblock footer %}
 
-=======
-    <main class="container mx-auto">
-      {% block content %}
-      {% endblock content %}
-    </main>
->>>>>>> upstream/main
     {% block modal %}
     {% endblock modal %}
     {% block inline_javascript %}

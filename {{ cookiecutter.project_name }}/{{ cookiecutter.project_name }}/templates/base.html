@@ -12,8 +12,8 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     {% block title %}{% endraw %}<title>{{ cookiecutter.project_name | title }}</title>{% raw %}{% endblock title %}
+    {% bootstrap_css %}
     {% compress css %}
-      {% bootstrap_css %}
       <link rel="stylesheet" href="{% static 'css/style.css' %}">
       {% block css %}
       {% endblock css %}

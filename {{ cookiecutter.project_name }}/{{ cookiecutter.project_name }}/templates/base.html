@@ -1,6 +1,7 @@
 {% raw %}{% load static %}
 {% load django_htmx %}
 {% load django_bootstrap5 %}
+{% load compress %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,14 +12,17 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     {% block title %}{% endraw %}<title>{{ cookiecutter.project_name | title }}</title>{% raw %}{% endblock title %}
-    {% bootstrap_css %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    {% block css %}
-    {% endblock css %}
-    {% bootstrap_javascript %}
+    {% compress css %}
+      {% bootstrap_css %}
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      {% block css %}
+      {% endblock css %}
+    {% endcompress css %}
     <script defer src="{% static 'vendors/htmx/htmx.min.js' %}"></script>
-    {% block javascript %}
-    {% endblock javascript %}
+    {% compress js %}
+      {% block javascript %}
+      {% endblock javascript %}
+    {% endcompress js %}
   </head>
   <body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
 

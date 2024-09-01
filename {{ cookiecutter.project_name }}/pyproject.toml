@@ -42,7 +42,7 @@ dependencies = [
   "psycopg[binary]",
   "sentry-sdk",
   "whitenoise",
-  "refreshcss[cli]",
+  "refreshcss",
 ]
 
 scripts.{{ cookiecutter.project_name }} = "{{ cookiecutter.project_name }}.__main__:main"

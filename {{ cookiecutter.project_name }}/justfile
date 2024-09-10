@@ -16,7 +16,9 @@ _default:
     just install
 
 # Setup local environnment (maybe install hatch and setup postgres (create database, etc..))
-@setup:
+setup:
+    #!/usr/bin/env bash
+    [ ! -d .git ] && git init && git add -A
     just bootstrap
     just run pre-commit install --install-hooks
     just migrate
@@ -160,9 +162,9 @@ docs-upgrade:
 @fmt:
     just --fmt --unstable
     hatch fmt --formatter
-    just run pre-commit run pyproject-fmt -a
-    just run pre-commit run reorder-python-imports -a
-    just run pre-commit run djlint-reformat-django -a
+    just run pre-commit run pyproject-fmt -a  > /dev/null 2>&1 || true
+    just run pre-commit run reorder-python-imports -a  > /dev/null 2>&1 || true
+    just run pre-commit run djlint-reformat-django -a  > /dev/null 2>&1 || true
 
 # Run pre-commit on all files
 @lint:
